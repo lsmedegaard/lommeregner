@@ -1,5 +1,6 @@
 let first_input;
 let second_input;
+let sum;
 
 document.querySelector("#firstnumber").addEventListener("input", firstNumber);
 
@@ -18,7 +19,12 @@ function secondNumber(){
 document.querySelector("#calculate").addEventListener("click", calculateNumbers);
 
 function calculateNumbers(){
-    let sum = first_input + second_input;
-    console.log(sum);
+    sum = first_input + second_input;
+    console.log("sum = " + sum);
+    showCalc();
 }
 
+function showCalc(){
+    console.log("showing calculation")
+    document.querySelector("#results li:last-child").textContent = sum;
+}
