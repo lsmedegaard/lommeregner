@@ -35,11 +35,11 @@ function calculateNumbers(){
 
    if(operator === "mul"){  
     calculation = first_input * second_input;
-    console.log("substration = " + calculation);
+    console.log("multiplikation = " + calculation);
    }
    if(operator === "div"){  
     calculation = first_input / second_input;
-    console.log("substration = " + calculation);
+    console.log("division = " + calculation);
    }
 
    showCalc();
@@ -47,6 +47,8 @@ function calculateNumbers(){
 
 function showCalc(){
     console.log("showing calculation")
-    document.querySelector("#results li:last-child").textContent = calculation;
+    let list = document.querySelector("ul li");
+    calculation = document.createTextNode(calculation);
+    list.append(calculation);
 }
 
