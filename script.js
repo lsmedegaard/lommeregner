@@ -47,8 +47,12 @@ function calculateNumbers(){
 
 function showCalc(){
     console.log("showing calculation")
-    let list = document.querySelector("ul li");
+    let list = document.querySelector("ul");
     calculation = document.createTextNode(calculation);
-    list.append(calculation);
+    list.appendChild(calculation);
+    let br = document.createElement("br");
+    list.appendChild(br);
+    list.scrollIntoView(true);
+
 }
 
