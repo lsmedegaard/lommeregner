@@ -52,7 +52,6 @@ function showCalc(){
     list.appendChild(calculation);
     let br = document.createElement("br");
     list.appendChild(br);
-    list.scrollIntoView(true);
-
+    list.scrollTop = list.scrollHeight;
 }
 
