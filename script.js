@@ -1,6 +1,6 @@
 let first_input;
 let second_input;
-let sum;
+let calculation; 
 
 document.querySelector("#firstnumber").addEventListener("input", firstNumber);
 
@@ -19,12 +19,34 @@ function secondNumber(){
 document.querySelector("#calculate").addEventListener("click", calculateNumbers);
 
 function calculateNumbers(){
-    sum = first_input + second_input;
-    console.log("sum = " + sum);
-    showCalc();
+
+   let operator = document.querySelector("#operator").value
+   console.log(operator);
+
+   if(operator === "add"){  
+    calculation = first_input + second_input;
+    console.log("sum = " + calculation);
+   }
+
+   if(operator === "sub"){  
+    calculation = first_input - second_input;
+    console.log("substration = " + calculation);
+   }
+
+   if(operator === "mul"){  
+    calculation = first_input * second_input;
+    console.log("substration = " + calculation);
+   }
+   if(operator === "div"){  
+    calculation = first_input / second_input;
+    console.log("substration = " + calculation);
+   }
+
+   showCalc();
 }
 
 function showCalc(){
     console.log("showing calculation")
-    document.querySelector("#results li:last-child").textContent = sum;
+    document.querySelector("#results li:last-child").textContent = calculation;
 }
+
