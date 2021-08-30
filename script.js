@@ -64,17 +64,25 @@ function checkRounding() {
 
 function showCalc(){
     console.log("showing calculation");
-if(rounding = "roundingOn"){
-   
+
+    if (rounding === "roundingOn"){
     let roundingValue = document.querySelector("#decimals").value;
     calculation = calculation.toFixed(roundingValue);
-    console.log("rounding on with " + roundingValue + " decimals");
-}
+    console.log("rounding with " + roundingValue + " decimals");
+    } 
+    if (rounding === "roundingOff"){
+        console.log("rounding is off");
+    }
     let list = document.querySelector("ul");
     calculation = document.createTextNode(calculation);
     list.appendChild(calculation);
     let br = document.createElement("br");
     list.appendChild(br);
     list.scrollTop = list.scrollHeight;
+}
+
+document.querySelector("#clear").addEventListener("click", clearOutput);
+function clearOutput(){
+
 }
 
