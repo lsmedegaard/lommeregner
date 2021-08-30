@@ -83,6 +83,7 @@ function showCalc(){
 
 document.querySelector("#clear").addEventListener("click", clearOutput);
 function clearOutput(){
-
+console.log("clear output fields");
+document.querySelector("#results").textContent = "";
 }
 
