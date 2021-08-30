@@ -1,6 +1,7 @@
 let first_input;
 let second_input;
 let calculation; 
+let rounding;
 
 document.querySelector("#firstnumber").addEventListener("input", firstNumber);
 
@@ -42,11 +43,33 @@ function calculateNumbers(){
     console.log("division = " + calculation);
    }
 
+   
+
    showCalc();
 }
 
+//check for rounding 
+document.querySelector("#doround").addEventListener("change", checkRounding);
+
+function checkRounding() {
+    
+    if (this.checked) {
+      console.log("rounding is on");
+      rounding = "roundingOn";
+    } else {
+      console.log("rounding is off");
+      rounding = "roundingOff";
+    }
+  };
+
 function showCalc(){
-    console.log("showing calculation")
+    console.log("showing calculation");
+if(rounding = "roundingOn"){
+   
+    let roundingValue = document.querySelector("#decimals").value;
+    calculation = calculation.toFixed(roundingValue);
+    console.log("rounding on with " + roundingValue + " decimals");
+}
     let list = document.querySelector("ul");
     calculation = document.createTextNode(calculation);
     list.appendChild(calculation);
